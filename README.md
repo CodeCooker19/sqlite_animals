@@ -1,9 +1,5 @@
 # NodeJS REST API SQLite
 
-This project is a proof of concept (POC).  
-It's purpose is to demonstrate an implementation of a NodeJS REST API using SQLite as a database (sqlite.db).   
-The code is written in ES6 and uses Promises.
-
 ## Installation :
 
 1. Clone this repository : `git clone https://github.com/streaming-dev/sqlite_animals.git`  

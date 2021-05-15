@@ -33,7 +33,7 @@ class AnimalsController {
 
   updateAnimal(req, res) {
     let animal = new Animals();
-    animal.id = req.body.id;
+    animal.id = req.params.id;
     animal.name = req.body.name;
     animal.animal_type_id = req.body.animal_type_id;
 

@@ -20,7 +20,7 @@ class controllerCommon {
     editSuccess(res) {
         return () => {
             res.status(201); // Created/Updated/Deleted
-            res.json({});
+            res.json({status: true, message: "success"});
         }
     }
 

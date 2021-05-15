@@ -30,10 +30,11 @@ class OwnerDao {
 
   update(Owner) {
     let sqlRequest = "UPDATE owners SET " +
-      "name=$name, " +
+      "name=$name " +
       "WHERE id=$id";
 
     let sqlParams = {
+      $id: Owner.id,
       $name: Owner.name
     };
     return this.common.run(sqlRequest, sqlParams);

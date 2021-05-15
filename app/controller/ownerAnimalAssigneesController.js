@@ -25,7 +25,7 @@ class OwnerAnimalAssigneesController {
 
   updateOwnerAnimalAssignees(req, res) {
     let ownerAnimalAssignees = new OwnerAnimalAssignees();
-    ownerAnimalAssignees.id = req.body.id;
+    ownerAnimalAssignees.id = req.params.id;
     ownerAnimalAssignees.owner_id = req.body.owner_id;
     ownerAnimalAssignees.animal_id = req.body.animal_id;
 

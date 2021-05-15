@@ -31,7 +31,7 @@ class AnimalsDao {
   update(Animal) {
     let sqlRequest = "UPDATE animals SET " +
       "name=$name, " +
-      "animal_type_id=$animal_type_id, " +
+      "animal_type_id=$animal_type_id " +
       "WHERE id=$id";
 
     let sqlParams = {

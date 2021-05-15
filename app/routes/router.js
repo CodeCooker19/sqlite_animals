@@ -3,11 +3,15 @@
  */
 const express = require('express');
 const router = express.Router();
+const animals = require('./api/animals');
+const animalType = require('./api/animalType');
+const ownerAnimalAssignees = require('./api/ownerAnimalAssignees');
+const owners = require('./api/owners');
 
 /* API routes */
-router.use('/animals', require('./api/animals'));
-router.use('/animaltype', require('./api/animalType'));
-router.use('/owneranimalassignees', require('./api/ownerAnimalAssignees'));
-router.use('/owners', require('./api/owners'));
+router.use('/animals', animals);
+router.use('/animaltype', animalType);
+router.use('/owneranimalassignees', ownerAnimalAssignees);
+router.use('/owners', owners);
 
 module.exports = router;

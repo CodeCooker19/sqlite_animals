@@ -25,7 +25,7 @@ class OwnersController {
 
   updateOwner(req, res) {
     let owner = new Owners();
-    owner.id = req.body.id;
+    owner.id = req.params.id;
     owner.name = req.body.name;
 
     return this.ownersDao.update(owner)

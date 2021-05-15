@@ -30,10 +30,11 @@ class AnimalTypeDao {
 
   update(AnimalType) {
     let sqlRequest = "UPDATE animal_type SET " +
-      "type=$type, " +
+      "type=$type " +
       "WHERE id=$id";
 
     let sqlParams = {
+      $id: AnimalType.id,
       $type: AnimalType.type
     };
     return this.common.run(sqlRequest, sqlParams);

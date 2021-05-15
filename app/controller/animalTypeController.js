@@ -25,7 +25,7 @@ class AnimalTypeController {
 
   updateAnimalType(req, res) {
     let animalType = new AnimalType();
-    animalType.id = req.body.id;
+    animalType.id = req.params.id;
     animalType.type = req.body.type;
 
     return this.animalTypeDao.update(animalType)
