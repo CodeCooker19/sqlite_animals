@@ -1,4 +1,4 @@
-const AwnerAnimalAssigneesDao = require('../dao/ownerAnimalAssignees');
+const AwnerAnimalAssigneesDao = require('../dao/ownerAnimalAssigneesDao');
 const ControllerCommon = require('./common/controllerCommon');
 const OwnerAnimalAssignees = require('../model/ownerAnimalAssignees');
 

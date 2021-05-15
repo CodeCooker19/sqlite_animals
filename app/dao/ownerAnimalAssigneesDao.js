@@ -23,7 +23,7 @@ class OwnerAnimalAssigneesDao {
       for (const row of rows) {
         owner_animal_assignees.push(new Owner(row.id, row.name));
       }
-      return cars;
+      return owner_animal_assignees;
     });
   };
 

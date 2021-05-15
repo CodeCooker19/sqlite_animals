@@ -24,7 +24,7 @@ class AnimalTypeDao {
       for (const row of rows) {
         animal_type.push(new AnimalType(row.id, row.type));
       }
-      return cars;
+      return animal_type;
     });
   };
 

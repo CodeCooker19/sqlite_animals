@@ -8,7 +8,7 @@ const ControllerCommon = require('./common/controllerCommon');
 const Animals = require('../model/animals');
 
 /**
- * Car Controller
+ * Animals Controller
  */
 class AnimalsController {
 

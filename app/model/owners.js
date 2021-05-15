@@ -1,5 +1,5 @@
 /**
- * Car Entity (ES6 Class)
+ * Owner Entity (ES6 Class)
  */
 
  class Owner {

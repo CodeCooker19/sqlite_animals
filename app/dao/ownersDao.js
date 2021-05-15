@@ -24,7 +24,7 @@ class OwnerDao {
       for (const row of rows) {
         owners.push(new Owner(row.id, row.name));
       }
-      return cars;
+      return owners;
     });
   };
 

@@ -1,5 +1,5 @@
 /**
- * Car Entity (ES6 Class)
+ * AnimalType Entity (ES6 Class)
  */
 
  class AnimalType {

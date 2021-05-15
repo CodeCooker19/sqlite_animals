@@ -20,11 +20,11 @@ class AnimalsDao {
   async findAll() {
     let sqlRequest = "SELECT * FROM animals";
     return await this.common.findAll(sqlRequest).then(rows => {
-      let owners = [];
+      let animals = [];
       for (const row of rows) {
-        owners.push(new Animals(row.id, row.name));
+        animals.push(new Animals(row.id, row.name));
       }
-      return cars;
+      return animals;
     });
   };
 
@@ -52,7 +52,7 @@ class AnimalsDao {
   };
 
   deleteById(id) {
-    let sqlRequest = "DELETE FROM owners WHERE id=$id";
+    let sqlRequest = "DELETE FROM animals WHERE id=$id";
     let sqlParams = {
       $id: id
     };
