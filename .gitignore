@@ -1,0 +1,6 @@
+.idea/
+node_modules/
+sqlite.db
+package.lock
+.env
+package-lock*
