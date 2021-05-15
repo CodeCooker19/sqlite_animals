@@ -22,7 +22,7 @@ class AnimalsDao {
     return await this.common.findAll(sqlRequest).then(rows => {
       let animals = [];
       for (const row of rows) {
-        animals.push(new Animals(row.id, row.name));
+        animals.push(new Animals(row.id, row.name, row.animal_type_id));
       }
       return animals;
     });

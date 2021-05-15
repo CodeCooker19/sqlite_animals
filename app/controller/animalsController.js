@@ -25,7 +25,7 @@ class AnimalsController {
       .catch(this.common.findError(res));
   };
 
-  getAnimals(res) {
+  getAnimals(req, res) {
     this.animalsDao.findAll()
       .then(this.common.findSuccess(res))
       .catch(this.common.findError(res));

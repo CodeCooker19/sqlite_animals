@@ -17,7 +17,7 @@ class OwnerAnimalAssigneesController {
       .catch(this.common.findError(res));
   };
 
-  getOwnerAnimalAssignees(res) {
+  getOwnerAnimalAssignees(req, res) {
     this.ownerAnimalAssigneesDao.findAll()
       .then(this.common.findSuccess(res))
       .catch(this.common.findError(res));

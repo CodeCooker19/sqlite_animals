@@ -17,7 +17,7 @@ class OwnersController {
       .catch(this.common.findError(res));
   };
 
-  getOwners(res) {
+  getOwners(req, res) {
     this.ownersDao.findAll()
       .then(this.common.findSuccess(res))
       .catch(this.common.findError(res));
