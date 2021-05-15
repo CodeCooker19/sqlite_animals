@@ -8,12 +8,12 @@ class OwnerAnimalAssigneesDao {
     this.common = new daoCommon();
   }
   async findById(id) {
-    let sqlRequest = "SELECT id, name FROM owner_animal_assignees WHERE id=$id";
+    let sqlRequest = "SELECT id, owner_id, animal_id FROM owner_animal_assignees WHERE id=$id";
     let sqlParams = {
       $id: id
     };
     return await this.common.findOne(sqlRequest, sqlParams).then(row =>
-      new Owner(row.id, row.name));
+      new OwnerAnimalAssignees(row.id, row.owner_id, row.animal_id));
   };
 
   async findAll() {
@@ -21,28 +21,31 @@ class OwnerAnimalAssigneesDao {
     return await this.common.findAll(sqlRequest).then(rows => {
       let owner_animal_assignees = [];
       for (const row of rows) {
-        owner_animal_assignees.push(new Owner(row.id, row.name));
+        owner_animal_assignees.push(new OwnerAnimalAssignees(row.id, row.owner_id, row.animal_id));
       }
       return owner_animal_assignees;
     });
   };
 
-  update(Owner) {
+  update(OwnerAnimalAssignees) {
     let sqlRequest = "UPDATE owner_animal_assignees SET " +
-      "name=$name, " +
+      "owner_id=$owner_id, animal_id=$animal_id " +
       "WHERE id=$id";
 
     let sqlParams = {
-      $name: Owner.name
+      $id: OwnerAnimalAssignees.id,
+      $owner_id: OwnerAnimalAssignees.owner_id,
+      $animal_id: OwnerAnimalAssignees.animal_id
     };
     return this.common.run(sqlRequest, sqlParams);
   };
 
-  create(Owner) {
-    let sqlRequest = "INSERT into owner_animal_assignees (name) " +
-      "VALUES ($name)";
+  create(OwnerAnimalAssignees) {
+    let sqlRequest = "INSERT into owner_animal_assignees (owner_id, animal_id) " +
+      "VALUES ($owner_id, $animal_id)";
     let sqlParams = {
-      $name: Owner.name,
+      $owner_id: OwnerAnimalAssignees.owner_id,
+      $animal_id: OwnerAnimalAssignees.animal_id
     };
     return this.common.run(sqlRequest, sqlParams);
   };

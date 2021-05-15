@@ -7,7 +7,7 @@ const animalsController = new AnimalsController();
 /**
  * Animals Entity routes
  */
-router.post('/create', function (req, res) {
+router.post('/', function (req, res) {
   animalsController.createAnimal(req, res);
 });
 

@@ -10,7 +10,7 @@ const animalTypeController = new AnimalTypeController();
  * AnimalType Entity routes
  */
 
-router.post('/create', function (req, res) {
+router.post('/', function (req, res) {
   animalTypeController.createAnimalType(req, res);
 });
 

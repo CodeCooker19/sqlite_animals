@@ -43,7 +43,7 @@ class OwnerDao {
     let sqlRequest = "INSERT into owners (name) " +
       "VALUES ($name)";
     let sqlParams = {
-      $name: Owner.name,
+      $name: Owner.name
     };
     return this.common.run(sqlRequest, sqlParams);
   };

@@ -35,6 +35,7 @@ class AnimalsDao {
       "WHERE id=$id";
 
     let sqlParams = {
+      $id: Animal.id,
       $name: Animal.name,
       $animal_type_id: Animal.animal_type_id
     };
@@ -42,11 +43,11 @@ class AnimalsDao {
   };
 
   create(Animal) {
-    let sqlRequest = "INSERT into animals (name) " +
-      "VALUES ($name)";
+    let sqlRequest = "INSERT into animals (name, animal_type_id) " +
+      "VALUES ($name, $animal_type_id)";
     let sqlParams = {
       $name: Animal.name,
-      $animal_type_id: animal_type_id.name
+      $animal_type_id: Animal.animal_type_id
     };
     return this.common.run(sqlRequest, sqlParams);
   };

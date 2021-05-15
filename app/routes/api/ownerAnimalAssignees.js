@@ -10,8 +10,8 @@ const ownerAnimalAssigneesController = new OwnerAnimalAssigneesController();
  * AnimalAssignees Entity routes
  */
 
-router.post('/create', function (req, res) {
-  ownerAnimalAssigneesController.createOwnerAnimalAssignee(req, res);
+router.post('/', function (req, res) {
+  ownerAnimalAssigneesController.createOwnerAnimalAssignees(req, res);
 });
 
 router.get('/', function (req, res) {
@@ -23,7 +23,7 @@ router.get('/:id', function (req, res) {
 });
 
 router.put('/:id', function (req, res) {
-  ownerAnimalAssigneesController.updateOwnerAnimalAssignee(req, res);
+  ownerAnimalAssigneesController.updateOwnerAnimalAssignees(req, res);
 });
 
 router.delete('/:id', function (req, res) {

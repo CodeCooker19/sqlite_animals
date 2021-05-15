@@ -1,53 +1,53 @@
-const AwnerAnimalAssigneesDao = require('../dao/ownerAnimalAssigneesDao');
+const OwnerAnimalAssigneesDao = require('../dao/ownerAnimalAssigneesDao');
 const ControllerCommon = require('./common/controllerCommon');
 const OwnerAnimalAssignees = require('../model/ownerAnimalAssignees');
 
 class OwnerAnimalAssigneesController {
 
   constructor() {
-    this.awnerAnimalAssigneesDao = new AwnerAnimalAssigneesDao();
+    this.ownerAnimalAssigneesDao = new OwnerAnimalAssigneesDao();
     this.common = new ControllerCommon();
   }
 
   getOwnerAnimalAssigneeById(req, res) {
     let id = req.params.id;
 
-    this.awnerAnimalAssigneesDao.findById(id)
+    this.ownerAnimalAssigneesDao.findById(id)
       .then(this.common.findSuccess(res))
       .catch(this.common.findError(res));
   };
 
   getOwnerAnimalAssignees(res) {
-    this.awnerAnimalAssigneesDao.findAll()
+    this.ownerAnimalAssigneesDao.findAll()
       .then(this.common.findSuccess(res))
       .catch(this.common.findError(res));
   };
 
-  updateOwnerAnimalAssignee(req, res) {
+  updateOwnerAnimalAssignees(req, res) {
     let ownerAnimalAssignees = new OwnerAnimalAssignees();
     ownerAnimalAssignees.id = req.body.id;
     ownerAnimalAssignees.owner_id = req.body.owner_id;
     ownerAnimalAssignees.animal_id = req.body.animal_id;
 
-    return this.awnerAnimalAssigneesDao.update(ownerAnimalAssignees)
+    return this.ownerAnimalAssigneesDao.update(ownerAnimalAssignees)
       .then(this.common.editSuccess(res))
       .catch(this.common.serverError(res));
   };
 
-  createOwnerAnimalAssignee(req, res) {
+  createOwnerAnimalAssignees(req, res) {
     let ownerAnimalAssignees = new OwnerAnimalAssignees();
     ownerAnimalAssignees.owner_id = req.body.owner_id;
     ownerAnimalAssignees.animal_id = req.body.animal_id;
 
-    return this.awnerAnimalAssigneesDao.create(ownerAnimalAssignees)
+    return this.ownerAnimalAssigneesDao.create(ownerAnimalAssignees)
       .then(this.common.editSuccess(res))
       .catch(this.common.serverError(res));
   };
 
-  deleteOwnerAnimalAssignee(req, res) {
+  deleteOwnerAnimalAssignees(req, res) {
     let id = req.params.id;
 
-    this.awnerAnimalAssigneesDao.deleteById(id)
+    this.ownerAnimalAssigneesDao.deleteById(id)
       .then(this.common.editSuccess(res))
       .catch(this.common.serverError(res));
   };

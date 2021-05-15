@@ -10,24 +10,24 @@ const ownersController = new OwnersController();
  * Owners Entity routes
  */
 
-router.post('/create', function (req, res) {
-  ownersController.createOwnerAnimalAssignee(req, res);
+router.post('/', function (req, res) {
+  ownersController.createOwner(req, res);
 });
 
 router.get('/', function (req, res) {
-  ownersController.getOwnerAnimalAssignees(req, res);
+  ownersController.getOwners(req, res);
 });
 
 router.get('/:id', function (req, res) {
-  ownersController.getOwnerAnimalAssigneeById(req, res);
+  ownersController.getOwnerById(req, res);
 });
 
 router.put('/:id', function (req, res) {
-  ownersController.updateOwnerAnimalAssignee(req, res);
+  ownersController.updateOwner(req, res);
 });
 
 router.delete('/:id', function (req, res) {
-  ownersController.deleteOwnerAnimalAssignee(req, res);
+  ownersController.deleteOwner(req, res);
 });
 
 module.exports = router;
