@@ -6,14 +6,14 @@ class controllerCommon {
     findSuccess(res) {
         return (result) => {
             res.status(200); // Found
-            res.json(result);
+            res.json({status: true, message: "success", data: result});
         }
     }
 
     existsSuccess(res) {
         return (result) => {
             res.status(200); // Found
-            res.json(result);
+            res.json({status: true, message: "success", data: result});
         }
     }
 
